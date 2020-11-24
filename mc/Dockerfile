@@ -23,6 +23,7 @@ ENV MC_VERSION=${MC_VER}
 VOLUME /var/minecraft
 EXPOSE 25565/tcp
 
+VOLUME /var/minecraft/logs
 VOLUME /var/backup
 
 CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "/opt/minecraft/server.jar", "nogui"]
