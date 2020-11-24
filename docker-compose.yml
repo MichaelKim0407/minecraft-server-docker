@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+    mc:
+        build:
+            context: ./mc
+        volumes:
+            - ./.volumes/storage:/var/minecraft
+        ports:
+            - '25565:25565'
