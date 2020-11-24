@@ -6,5 +6,6 @@ services:
             context: ./mc
         volumes:
             - ./.volumes/storage:/var/minecraft
+            - ./.volumes/backup:/var/backup
         ports:
             - '25565:25565'

@@ -13,6 +13,7 @@ RUN apt-get update && \
 
 WORKDIR /opt/minecraft
 ADD ${JAR_FILE} ./server.jar
+COPY ./backup.sh ./backup.sh
 
 WORKDIR /var/minecraft
 COPY ./eula.txt ./eula.txt
@@ -21,5 +22,7 @@ ENV MC_VERSION=${MC_VER}
 
 VOLUME /var/minecraft
 EXPOSE 25565/tcp
+
+VOLUME /var/backup
 
 CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "/opt/minecraft/server.jar", "nogui"]
